@@ -33,8 +33,8 @@ python run.py train \
 
 ## Run ligand binding model
 
-## target A: MTOR
 ```
+## target A: MTOR
 # download BindingDB dataset and save it as csv-format file, eg, step1_key_info.csv
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
