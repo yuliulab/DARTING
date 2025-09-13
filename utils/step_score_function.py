@@ -311,9 +311,9 @@ class ArithmeticMeanScoringFunction(BatchScoringFunction):
 
         for function, weight in zip(self.scoring_functions, self.weights):
             res = function.score_list(smiles_list)
-            #对每个打分项进行加权
+         
             scores.append(weight * np.array(res))
-        #加权平均
+       
         scores = np.array(scores).sum(axis=0) / np.sum(self.weights)
 
         return list(scores)
