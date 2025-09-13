@@ -17,7 +17,7 @@ conda install numpy pandas scikit-learn
 pip install rdkit-pypi
 ```
 
-# Train
+# Train VAE model
 ```
 python run.py train \
 	--train_data ./data/guacamol_v1_train.smiles \
@@ -31,7 +31,7 @@ python run.py train \
 	--device cpu
 ```
 
-## Run ligand binding model
+## Train ligand efficiency prediction model
 
 ```
 ## target A: MTOR
