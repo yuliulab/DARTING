@@ -83,7 +83,18 @@ class AbsoluteScoreModifier(ScoreModifier):
 
     def __call__(self, x):
         return 1. - np.abs(self.target_value - x)
+### use ScoreModifier to get some spefic function
+class LinearModifier(ScoreModifier):
+    """
+    Score modifier that multiplies the score by a scalar (default: 1, i.e. do nothing).
+    """
 
+    def __init__(self, slope=1.0):
+        self.slope = slope
+
+    def __call__(self, x):
+        #return: x itself
+        return self.slope * x
 
 class GaussianModifier(ScoreModifier):
     """
@@ -97,18 +108,6 @@ class GaussianModifier(ScoreModifier):
     def __call__(self, x):
         # scale x for a gaussian distribution
         return np.exp(-0.5 * np.power((x - self.mu) / self.sigma, 2.))
-### use ScoreModifier to get some spefic function
-class LinearModifier(ScoreModifier):
-    """
-    Score modifier that multiplies the score by a scalar (default: 1, i.e. do nothing).
-    """
-
-    def __init__(self, slope=1.0):
-        self.slope = slope
-
-    def __call__(self, x):
-        #return: x itself
-        return self.slope * x
 
 
 class MinMaxGaussianModifier(ScoreModifier):
@@ -230,17 +229,14 @@ class MoleculewiseScoringFunction(ScoringFunction):
 #modify `class ScoreModifier` 2
 class BatchScoringFunction(ScoringFunction):
     """
-    Objective function that is implemented by calculating the scores of molecules in batches.
-    Rather use `MoleculewiseScoringFunction` than this if processing a batch is not faster than
-    trivially parallelizing the `score` function for the distinct molecules.
-
-    Derived classes must only implement the `raw_score_list` function.
+    
     """
 
     def __init__(self, score_modifier: ScoreModifier = None) -> None:
         """
         Args:
-            score_modifier: Modifier to apply to the score. If None, will be LinearModifier()
+            score_modifier: Modifier to apply to the score. 
+            If None, will be LinearModifier()
         """
         super().__init__(score_modifier=score_modifier)
 
@@ -259,20 +255,23 @@ class BatchScoringFunction(ScoringFunction):
     @abstractmethod
     def raw_score_list(self, smiles_list: List[str]) -> List[float]:
         """
-        Calculate the objective score before application of the modifier for a batch of molecules.
+        Calculate the objective score before application of the modifier 
+        for a batch of molecules.
 
         Args:
             smiles_list: list of SMILES strings to process
 
         Returns:
-            A list of scores. For unsuccessful calculations or invalid molecules, `None` should be given as a value for
+            A list of scores.
+            For unsuccessful calculations or invalid molecules,
+            `None` should be given as a value for
             the corresponding molecule.
         """
         raise NotImplementedError
 
 
 
-#modify `MoleculewiseScoringFunction` 1
+#modify `MoleculewiseScoringFunction` 
 class ScoringFunctionBasedOnRdkitMol(MoleculewiseScoringFunction):
     """
     Base class for scoring functions that calculate scores based on rdkit.Chem.Mol instances.
@@ -323,9 +322,9 @@ class ArithmeticMeanScoringFunction(BatchScoringFunction):
 
         for function, weight in zip(self.scoring_functions, self.weights):
             res = function.score_list(smiles_list)
-         
+            #对每个打分项进行加权
             scores.append(weight * np.array(res))
-       
+        #加权平均
         scores = np.array(scores).sum(axis=0) / np.sum(self.weights)
 
         return list(scores)
