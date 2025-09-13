@@ -10,7 +10,7 @@ from rdkit.Chem import AllChem
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import KFold
-# 应用K折交叉验证（K=5）
+
 from sklearn.model_selection import cross_val_score
 from pathlib import Path
 
