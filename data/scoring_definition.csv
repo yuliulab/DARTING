@@ -1,0 +1,7 @@
+category,name,minimize,mu,sigma,file,model,n_top,agg
+qed,qed,FALSE,0.67,0.1,,,,
+sa,sa,TRUE,3,0.5,,,,
+latent_distance,MEK1_vae_dist,TRUE,1.5,0.5,/cluster/home/ywang/multi_target/section9_mek1_mtor/train_data/Dual_specificity_mitogen-activated_protein_kinase_kinase_1_top20_ic50_only_smi.txt,/cluster/home/ywang/multi_target/section_2_decomponnet/model.pt,20,mean
+latent_distance,MTOR_vae_dist,TRUE,1.5,0.5,/cluster/home/ywang/multi_target/section9_mek1_mtor/train_data/Serine_threonine-protein_kinase_mTOR_top20_ic50_only_smi.txt,/cluster/home/ywang/multi_target/section_2_decomponnet/model.pt,20,mean
+ligand_efficiency,MEK1_le,FALSE,0.8,0.3,/cluster/home/ywang/multi_target/section9_mek1_mtor/step01_train_binding_model/MEK1.pkl,,,
+ligand_efficiency,MTOR_le,FALSE,0.8,0.3,/cluster/home/ywang/multi_target/section9_mek1_mtor/step01_train_binding_model/MTOR.pkl,,,
