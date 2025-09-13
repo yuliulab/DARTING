@@ -97,6 +97,18 @@ class GaussianModifier(ScoreModifier):
     def __call__(self, x):
         # scale x for a gaussian distribution
         return np.exp(-0.5 * np.power((x - self.mu) / self.sigma, 2.))
+### use ScoreModifier to get some spefic function
+class LinearModifier(ScoreModifier):
+    """
+    Score modifier that multiplies the score by a scalar (default: 1, i.e. do nothing).
+    """
+
+    def __init__(self, slope=1.0):
+        self.slope = slope
+
+    def __call__(self, x):
+        #return: x itself
+        return self.slope * x
 
 
 class MinMaxGaussianModifier(ScoreModifier):
