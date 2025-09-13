@@ -1,4 +1,4 @@
-#! /user/bin/pthon
+#! /user/bin/python
 #Author : yingwang
 import random
 import torch
