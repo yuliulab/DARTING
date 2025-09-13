@@ -29,11 +29,11 @@ python run.py train \
 
 
 ## run ligand binding model
-#target A
+## target A
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \ #eg, "/multi_target/step1_extract/step1_key_info.csv"
 --uniprot_id "P42345" --output_path "MTOR"
-#target B
+## target B
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "Q02750" --output_path "MEK1.pkl"
