@@ -1,8 +1,9 @@
 #DARTING
 # create conda, python=3.8
+```
 conda env create -f environment.yml -n DARTING
-
 conda activate DARTING
+```
 * pandas>=1.0.3
 * numpy>=1.18.1
 * rdkit>=2019.09.3
@@ -17,6 +18,7 @@ pip install rdkit-pypi
 ```
 
 # Train
+```
 python run.py train \
 	--train_data ./data/guacamol_v1_train.smiles \
 	--log_file log.txt \
@@ -27,21 +29,23 @@ python run.py train \
 	--debug \
 	--d_dropout 0.2 \
 	--device cpu
-
+```
 
 ## Run ligand binding model
+
+## target A: MTOR
+```
 # download BindingDB dataset and save it as csv-format file, eg, step1_key_info.csv
-## target A
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "P42345" --output_path "MTOR"
-## target B
+## target B: MEK1
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "Q02750" --output_path "MEK1.pkl"
-
+```
 ## Run molecular generation
-
+```
 python run.py generate --model_path ./model.pt \
 --scoring_definition ./data/scoring_definition.csv \
  --max_len 100 \
@@ -59,3 +63,4 @@ python run.py generate --model_path ./model.pt \
  --save_individual_scores \
  --debug \
  --starting_population ./data/BTK_region3_and_LYN_region2.txt 
+```
