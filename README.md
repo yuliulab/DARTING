@@ -30,9 +30,10 @@ python run.py train \
 
 
 ## run ligand binding model
+# download BindingDB dataset and save it as csv-format file, eg, step1_key_info.csv
 ## target A
 python run.py train_ligand_binding_model \
---binding_db_path [your path to BindingDB dataset] \ #eg, "/multi_target/step1_extract/step1_key_info.csv"
+--binding_db_path [your path to BindingDB dataset] \ 
 --uniprot_id "P42345" --output_path "MTOR"
 ## target B
 python run.py train_ligand_binding_model \
