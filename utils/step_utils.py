@@ -1,4 +1,5 @@
 #! /user/bin/python
+#Author:yingwang
 import pandas as pd
 import re
 import os
@@ -75,15 +76,15 @@ def trim_bond(smiles:str)-> Optional[str]:
         bonds = m.GetBonds()
         types = []
         for bond in bonds:
-            # 获取原子的索引
+            
             begin_atom_idx = bond.GetBeginAtomIdx()
             end_atom_idx = bond.GetEndAtomIdx()
-           # 获取化学键类型
+          
             bond_type = str(bond.GetBondType())
     
             if bond_type == "TRIPLE":
                 print(f"三键:f{smiles} ")
-                # 打印原子索引和化学键类型
+               
                 types.append(str(bond_type))
     #    print(f'Atom indices: {begin_atom_idx}-{end_atom_idx}')
     #    print(f'Bond type: {bond_type}')
@@ -132,11 +133,10 @@ def canonicalize_list(smiles_list: Iterable[str], include_stereocenters=True) ->
     #remove None
     canonicalized_smiles = [s for s in canonicalized_smiles if s is not None]
 
-    #炔键的数量 < 1
     canonicalized_smiles2 = [s for s in canonicalized_smiles if len(trim_bond(s)) < 1]
-    #mw[400-600]
+  
     canonicalized_smiles2 = [s for s in canonicalized_smiles2 if trim_mw(s) == 1]
-    #CFFF==0
+ 
     canonicalized_smiles2 = [s for s in canonicalized_smiles2 if trim_cfff(s) ==0]
     return canonicalized_smiles2
 
@@ -241,7 +241,7 @@ def get_fingerprint_similarity_pair(a,b):
 ##score#######
 
 
-#这里我做了改动，删除celllinemodel encode
+
 def build_scoring_function( scoring_definition,
                             fscores,
                             opti='gauss',
@@ -278,7 +278,7 @@ def build_scoring_function( scoring_definition,
                 raise RuntimeError("No vae class defined.  TODO: you need to fix this")
             # file of smiles for 2 target
             
-            #读取2个靶标的活性分子并计算嵌入向量的距离
+          
             with open(row.file) as handle:
                 smiles_targets = [line.rstrip() for line in handle]
                 smiles_targets = canonicalize_list(smiles_targets)
@@ -318,7 +318,7 @@ def filter_results(df, mean=True, verbose=False):
         print("After QED: ", df.shape)
     return df
 """
-#可以后面添加其他打分过滤条件
+
     # qed min
     qed_min = 0.7
     df = df[df['qed']>qed_min]
