@@ -329,12 +329,7 @@ def filter_results(df, mean=True, verbose=False):
 
 def get_raw_scores(molecules, scores, aggregate_scoring_function=None):
     """
-    get scores of individal_scorers(返回逐个项目的打分结果) and/or 各项评分的综合均值
-
-    :molecules,标准化后的rdkit smiles
-    :scores,各项打分方法字典，如{"qed": QED_custom()}
-    :aggregate_scoring_function,是增加各项打分的进一步处理后的综合评分,这里可以制定处理方式
-    Return:score dataframe
+    get scores of individal_scorers
     """
     #pass
 
@@ -342,11 +337,11 @@ def get_raw_scores(molecules, scores, aggregate_scoring_function=None):
     raw_scores['smiles'] = molecules
 
     for n, sf in scores.items():
-        #在每个方法上，n is
+      
         l = []
         for m in molecules:
             try:
-                #对每个分子
+              
                 s = sf.raw_score(m)
             except:
                 # some error occured
