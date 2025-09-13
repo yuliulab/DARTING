@@ -16,7 +16,7 @@ conda install numpy pandas scikit-learn
 pip install rdkit-pypi
 ```
 
-# train
+# Train
 python run.py train \
 	--train_data ./data/guacamol_v1_train.smiles \
 	--log_file log.txt \
@@ -29,18 +29,18 @@ python run.py train \
 	--device cpu
 
 
-## run ligand binding model
+## Run ligand binding model
 # download BindingDB dataset and save it as csv-format file, eg, step1_key_info.csv
 ## target A
 python run.py train_ligand_binding_model \
---binding_db_path [your path to BindingDB dataset] \ 
+--binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "P42345" --output_path "MTOR"
 ## target B
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "Q02750" --output_path "MEK1.pkl"
 
-## run molecular generation
+## Run molecular generation
 
 python run.py generate --model_path ./model.pt \
 --scoring_definition ./data/scoring_definition.csv \
