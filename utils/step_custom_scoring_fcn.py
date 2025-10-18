@@ -52,7 +52,7 @@ class LigandEfficancy(MoleculewiseScoringFunction):
         # determine score from self.model and the given string
         m =Chem.MolFromSmiles(smiles)
         mph = Chem.AddHs(m)
-        N = mph.GetNumAtoms() - mph.GetNumHeavyAtoms()
+        N = mph.GetNumHeavyAtoms()
         #get fingure print for smile
         fp = AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(smiles),2)
         fp = np.array([fp])
