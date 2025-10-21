@@ -58,7 +58,8 @@ class LigandEfficancy(MoleculewiseScoringFunction):
         fp = np.array([fp])
         # fti linear model
         pic50 = self.rfr.predict(fp)
-        LE = 1.4*(pic50)/N
+        #LE = 1.4*(pic50)/N
+        LE = pic50
         return LE[0]
 
     
