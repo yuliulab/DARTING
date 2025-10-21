@@ -40,7 +40,7 @@ def train_ligand_binding_model(target_unit_pro_id,
         t = pd.Series([v]).dropna().min()
         if int(t) != 0:
             #smaller in ic50, greater in t
-            t = -np.log10(t*1E-9) 
+            t = -np.log10(t*np.exp(-9))*1.4
             vs.append(t)
             left_s.append(s)
     
