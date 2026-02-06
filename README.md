@@ -62,5 +62,5 @@ python run.py generate --model_path ./model.pt \
  --save_frequency 1 \
  --save_individual_scores \
  --debug \
- --starting_population ./data/MTOR_region1_MEK1_region3.txt
+ --starting_population ./data/MTOR_region1_MEK1_region3_start_population.txt
 ```
