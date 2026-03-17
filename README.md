@@ -6,9 +6,6 @@ CPU version:
 ```bash
 conda env create -f environment.cpu.yml -n DARTING
 conda activate DARTING
-conda install pytorch::pytorch -c pytorch
-conda install numpy pandas scikit-learn
-pip install rdkit-pypi
 ```
 * pandas>=1.0.3
 * numpy>=1.18.1
@@ -44,9 +41,10 @@ gunzip model.pt.gz
 ```
 ## Step 2: Train ligand-binding prediction models for downstream generation
 Here, we use MTOR and MEK1 as examples.
+Replace `<path_to_bindingdb_csv>` with the local path to your BindingDB CSV file.
 ```
 ## target A: MTOR
-# download BindingDB dataset and save it as csv-format file, eg, step1_key_info.csv
+# Download the BindingDB dataset and save it as a CSV file.
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "P42345" --output_path "MTOR.pkl"
