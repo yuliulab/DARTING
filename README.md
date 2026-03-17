@@ -1,6 +1,6 @@
 # Section 1: Setup Environment
-## You can follow this instructions to setup the environment  
-## We use conda here, you can install DARTING via conda yaml files and conda commands:
+You can follow this instructions to setup the environment  
+We use conda here, you can install DARTING via conda yaml files and conda commands:
 ```
 conda env create -f environment.yml -n DARTING
 conda activate DARTING
@@ -17,7 +17,7 @@ pip install rdkit-pypi
 
 # Section 2: Usage  
 ## Preparation 01: Train VAE model in DARTING  
-### You can re-train model via following commands
+You can re-train model via following commands
 ```
 python run.py train \
 	--train_data ./data/guacamol_v1_train.smiles \
@@ -30,7 +30,10 @@ python run.py train \
 	--d_dropout 0.2 \
 	--device cpu
 ```
-### Or, you can directly upload model weights for you analysis
+Or, you can directly upload model weights for you analysis
+```
+model.pt
+```
 ## Preparation 02: Train ligand efficiency prediction model
 
 ```
