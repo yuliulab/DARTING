@@ -30,30 +30,33 @@ python run.py train \
 	--d_dropout 0.2 \
 	--device cpu
 ```
-Or, you can directly upload model weights for your analysis
+Or download the pretrained model weights directly:
 ```
-wget https://github.com/yuliulab/DARTING/releases/model.pt
+wget https://github.com/yuliulab/DARTING/releases/download/v1.0/model.pt
 
 ```
-## Preparation 02: Train ligand efficiency prediction model
-Here, we take MEK1/MTOR as an usage example
+## Step 2: Train ligand-binding prediction models for downstream generation
+Here, we use MTOR and MEK1 as examples.
 ```
 ## target A: MTOR
 # download BindingDB dataset and save it as csv-format file, eg, step1_key_info.csv
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
---uniprot_id "P42345" --output_path "MTOR"
+--uniprot_id "P42345" --output_path "MTOR.pkl"
 ## target B: MEK1
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "Q02750" --output_path "MEK1.pkl"
 ```
-## Preparation 03: Find activity hotspot
-```
+## Step 3: Identify activity hotspots
+```bash
 cd hotspot_finder
-#run get_hotspot_for_MEK1_MTOR.ipynb
 ```
-## Run molecular generation
+Here, we use MTOR and MEK1 as examples.
+Open and run the notebook get_hotspot_for_MEK1_MTOR.ipynb.
+
+## Step 4: Run molecular generation
+Here, we use MTOR and MEK1 as examples.
 ```
 python run.py generate --model_path ./model.pt \
 --scoring_definition ./data/scoring_definition.csv \
