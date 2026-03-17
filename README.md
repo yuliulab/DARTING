@@ -1,6 +1,6 @@
 # Section 1: Setup Environment
 You can follow this instructions to setup the environment  
-We use conda here, you can install DARTING via conda yaml files and conda commands:
+We use conda here, you can install DARTING via conda yaml files and conda commands:  
 CPU version:
 ```bash
 conda env create -f environment.cpu.yml -n DARTING
@@ -14,7 +14,7 @@ pip install rdkit-pypi
 * rdkit>=2019.09.3
 * joblib>=0.14.1
 * scikit-learn>=0.22.1
-* python==3.8.19  
+* python==3.8.19
 GPU version:
 The CUDA environment additionally requires a compatible NVIDIA driver on the host machine.
 ```bash
