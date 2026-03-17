@@ -29,15 +29,12 @@ The training and validation data are provided as release assets and are not stor
 mkdir -p data
 cd data
 
-wget https://github.com/<user>/<repo>/releases/latest/download/guacamol_v1_train.smiles
-wget https://github.com/<user>/<repo>/releases/latest/download/guacamol_v1_validation.smiles
+wget https://github.com/yuliulab/DARTING/releases/download/guacamol_v1_train.smiles
+wget https://github.com/yuliulab/DARTING/releases/download/guacamol_v1_validation.smiles
 
 cd ..
 ```
-After downloading, the directory structure should look like:
-data/
-├── guacamol_v1_train.smiles
-└── guacamol_v1_validation.smiles
+
 Run the following commands from the project root directory:
 ## Step 1: Train the VAE model in DARTING  
 Using the following commands to train the model
