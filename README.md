@@ -1,5 +1,5 @@
 #Section 1: Setup Environment
-#You can follow this instructions to setup the environment
+#You can follow this instructions to setup the environment\n
 #We use conda here
 ```
 conda env create -f environment.yml -n DARTING
