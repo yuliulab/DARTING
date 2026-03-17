@@ -16,7 +16,8 @@ pip install rdkit-pypi
 * python==3.8.19
 
 # Section 2: Usage  
-## train VAE model in DARTING
+## Preparation 01: Train VAE model in DARTING  
+### You can re-train model via following commands
 ```
 python run.py train \
 	--train_data ./data/guacamol_v1_train.smiles \
@@ -29,8 +30,8 @@ python run.py train \
 	--d_dropout 0.2 \
 	--device cpu
 ```
-
-## Train ligand efficiency prediction model
+### Or, you can directly upload model weights for you analysis
+## Preparation 02: Train ligand efficiency prediction model
 
 ```
 ## target A: MTOR
