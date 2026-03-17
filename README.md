@@ -1,6 +1,6 @@
 #Section 1: Setup Environment
 #You can follow this instructions to setup the environment
-We use conda here
+#We use conda here
 ```
 conda env create -f environment.yml -n DARTING
 conda activate DARTING
