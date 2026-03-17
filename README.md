@@ -32,7 +32,7 @@ python run.py train \
 ```
 Or, you can directly upload model weights for you analysis
 ```
-model.pt
+model.pth
 ```
 ## Preparation 02: Train ligand efficiency prediction model
 
