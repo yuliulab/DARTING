@@ -16,8 +16,8 @@ pip install rdkit-pypi
 * python==3.8.19
 
 # Section 2: Usage
-## Preparation 01: Train VAE model in DARTING  
-You can re-train model via following commands
+## Step 1: Train the VAE model in DARTING  
+Using the following commands to train the model
 ```
 python run.py train \
 	--train_data ./data/guacamol_v1_train.smiles \
