@@ -37,7 +37,7 @@ cd ..
 
 Run the following commands from the project root directory:
 ## Step 1: Train the VAE model in DARTING  
-Using the following commands to train the model
+Using the following commands to train the model.  
 The example command uses paths relative to the project root directory. You may change them to absolute paths as needed.
 ```
 python run.py train \
