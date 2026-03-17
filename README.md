@@ -1,8 +1,9 @@
 # Section 1: Setup Environment
 You can follow this instructions to setup the environment  
 We use conda here, you can install DARTING via conda yaml files and conda commands:
-```
-conda env create -f environment.yml -n DARTING
+CPU version:
+```bash
+conda env create -f environment.cpu.yml -n DARTING
 conda activate DARTING
 conda install pytorch::pytorch -c pytorch
 conda install numpy pandas scikit-learn
@@ -14,7 +15,12 @@ pip install rdkit-pypi
 * joblib>=0.14.1
 * scikit-learn>=0.22.1
 * python==3.8.19
-
+GPU version:
+The CUDA environment additionally requires a compatible NVIDIA driver on the host machine.
+```bash
+conda env create -f environment.cuda.yml
+conda activate DARTING
+```
 # Section 2: Usage
 ## Step 1: Train the VAE model in DARTING  
 Using the following commands to train the model
