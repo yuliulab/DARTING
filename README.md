@@ -1,9 +1,12 @@
 #Section 1: Setup Environment
 #You can follow this instructions to setup the environment  
-#We use conda here
+#We use conda here, you can install DARTING via conda yaml files and conda commands:
 ```
 conda env create -f environment.yml -n DARTING
 conda activate DARTING
+conda install pytorch::pytorch -c pytorch
+conda install numpy pandas scikit-learn
+pip install rdkit-pypi
 ```
 * pandas>=1.0.3
 * numpy>=1.18.1
@@ -12,13 +15,8 @@ conda activate DARTING
 * scikit-learn>=0.22.1
 * python==3.8.19
 
-```
-conda install pytorch::pytorch -c pytorch
-conda install numpy pandas scikit-learn
-pip install rdkit-pypi
-```
-
-# Train VAE model
+#Section 2: Usage  
+#train VAE model in DARTING
 ```
 python run.py train \
 	--train_data ./data/guacamol_v1_train.smiles \
