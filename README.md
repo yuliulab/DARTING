@@ -32,7 +32,7 @@ python run.py train \
 ```
 Or, you can directly upload model weights for your analysis
 ```
-wget 
+wget https://github.com/yuliulab/DARTING/releases/model.pt
 
 ```
 ## Preparation 02: Train ligand efficiency prediction model
