@@ -1,4 +1,5 @@
 ![logo](./Figure/Graph_abstract.png)
+
 # Section 1: Setup Environment
 You can follow this instructions to setup the environment  
 We use conda here, you can install DARTING via conda yaml files and conda commands:  
@@ -20,6 +21,24 @@ conda env create -f environment.cuda.yml
 conda activate DARTING
 ```
 # Section 2: Usage
+## Download training and validation data
+
+The training and validation data are provided as release assets and are not stored directly in the repository.
+
+```bash
+mkdir -p data
+cd data
+
+wget https://github.com/<user>/<repo>/releases/latest/download/guacamol_v1_train.smiles
+wget https://github.com/<user>/<repo>/releases/latest/download/guacamol_v1_validation.smiles
+
+cd ..
+```
+After downloading, the directory structure should look like:
+data/
+├── guacamol_v1_train.smiles
+└── guacamol_v1_validation.smiles
+Run the following commands from the project root directory:
 ## Step 1: Train the VAE model in DARTING  
 Using the following commands to train the model
 ```
