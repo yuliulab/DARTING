@@ -1,3 +1,4 @@
+![logo](./Figure/Graph_abstract.png)
 # Section 1: Setup Environment
 You can follow this instructions to setup the environment  
 We use conda here, you can install DARTING via conda yaml files and conda commands:  
