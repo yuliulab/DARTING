@@ -15,7 +15,7 @@ pip install rdkit-pypi
 * scikit-learn>=0.22.1
 * python==3.8.19
 
-# Section 2: Usage  
+# Section 2: Usage
 ## Preparation 01: Train VAE model in DARTING  
 You can re-train model via following commands
 ```
@@ -30,12 +30,13 @@ python run.py train \
 	--d_dropout 0.2 \
 	--device cpu
 ```
-Or, you can directly upload model weights for you analysis
+Or, you can directly upload model weights for your analysis
 ```
-de
+wget 
+
 ```
 ## Preparation 02: Train ligand efficiency prediction model
-
+Here, we take MEK1/MTOR as an usage example
 ```
 ## target A: MTOR
 # download BindingDB dataset and save it as csv-format file, eg, step1_key_info.csv
@@ -46,6 +47,11 @@ python run.py train_ligand_binding_model \
 python run.py train_ligand_binding_model \
 --binding_db_path [your path to BindingDB dataset] \
 --uniprot_id "Q02750" --output_path "MEK1.pkl"
+```
+## Preparation 03: Find activity hotspot
+```
+cd hotspot_finder
+#run get_hotspot_for_MEK1_MTOR.ipynb
 ```
 ## Run molecular generation
 ```
@@ -67,3 +73,4 @@ python run.py generate --model_path ./model.pt \
  --debug \
  --starting_population ./data/MTOR_region1_MEK1_region3_start_population.txt
 ```
+
