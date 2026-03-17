@@ -83,4 +83,9 @@ python run.py generate --model_path ./model.pt \
  --debug \
  --starting_population ./data/MTOR_region1_MEK1_region3_start_population.txt
 ```
-
+# Contcat Us
+If there are any questions in DARTING, feel free to contact us or create an issue.
+Liu Lab
+Shanghai Children’s Medical Center, Shanghai Jiao Tong University, China
+Ying Wang: wangying1970091@sjtu.edu.cn
+Yu Liu: yu.liu@sjtu.edu.cn
