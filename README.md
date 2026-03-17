@@ -53,7 +53,8 @@ python run.py train_ligand_binding_model \
 cd hotspot_finder
 ```
 Here, we use MTOR and MEK1 as examples.
-Open and run the notebook get_hotspot_for_MEK1_MTOR.ipynb.
+Open and run the notebook `get_hotspot_for_MEK1_MTOR.ipynb` to identify activity hotspots for MTOR and MEK1. 
+This notebook generates the starting population file `MTOR_region1_MEK1_region3_start_population.txt`, which is used in Step 4.
 
 ## Step 4: Run molecular generation
 Here, we use MTOR and MEK1 as examples.
