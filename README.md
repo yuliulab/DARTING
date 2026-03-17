@@ -38,8 +38,8 @@ python run.py train \
 ```
 Or download the pretrained model weights directly:
 ```
-wget https://github.com/yuliulab/DARTING/releases/download/v1.0/model.pt
-
+wget https://github.com/yuliulab/DARTING/releases/download/weights/model.pt.gz
+gunzip model.pt.gz
 ```
 ## Step 2: Train ligand-binding prediction models for downstream generation
 Here, we use MTOR and MEK1 as examples.
