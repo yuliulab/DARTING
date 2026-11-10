@@ -183,11 +183,11 @@ def generate_parser(parser):
         type=int,
         help='Batch size for the optimization')
     opt_runtime.add_argument('--optimize_n_epochs',
-        default=2,
+        default=4,
         type=int,
         help='Number of epochs for the optimization')
     opt_runtime.add_argument('--pretrain_n_epochs',
-        default=2,
+        default=4,
         type=int,
         help='Number of epochs for training on starting population.')
     opt_runtime.add_argument('--benchmark_num_samples',
