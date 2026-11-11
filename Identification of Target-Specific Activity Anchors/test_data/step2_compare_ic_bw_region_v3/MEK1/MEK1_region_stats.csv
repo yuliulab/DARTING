@@ -1,0 +1,4 @@
+target,region,median,mean,is_optimal
+MEK1,R3,25.0,233.82926829268294,True
+MEK1,R1,57.5,134.99646464646466,False
+MEK1,R2,49.0,156.9346590909091,False
