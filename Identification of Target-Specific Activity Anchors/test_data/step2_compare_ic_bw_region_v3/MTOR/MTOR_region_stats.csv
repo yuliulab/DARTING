@@ -1,0 +1,4 @@
+target,region,median,mean,is_optimal
+MTOR,R3,46.0,131.91673571428572,False
+MTOR,R1,20.0,85.29680208333333,True
+MTOR,R2,25.05,142.6439221556886,False
