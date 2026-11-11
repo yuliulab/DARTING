@@ -183,7 +183,7 @@ def generate_parser(parser):
         type=int,
         help='Batch size for the optimization')
     opt_runtime.add_argument('--optimize_n_epochs',
-        default=4,
+        default=2,
         type=int,
         help='Number of epochs for the optimization')
     opt_runtime.add_argument('--pretrain_n_epochs',
